@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#0a1f17" />
+  <meta name="description" content="ODS 3 — Saúde e Bem-Estar. Uma enciclopédia interativa de doenças e os exercícios físicos que ajudam a amenizar, controlar ou até reverter cada condição." />
+  <title>ODS 3 · Corpo em Movimento — A medicina do movimento</title>
+
+  <!-- Tipografia editorial -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,700;9..144,900&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;500&display=swap" rel="stylesheet" />
+
+  <!-- GSAP -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js" defer></script>
+
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <!-- ============================================================
+       CURSOR PERSONALIZADO
+  ============================================================ -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PRELOADER EDITORIAL
+  ============================================================ -->
+  <div class="preloader" id="preloader">
+    <div class="preloader__inner">
+      <div class="preloader__brand">
+        <span>O</span><span>D</span><span>S</span><span>·</span><span>3</span>
+      </div>
+      <div class="preloader__meta">
+        <span class="preloader__label">Carregando o corpo em movimento</span>
+        <span class="preloader__count" id="preloaderCount">000</span>
+      </div>
+      <div class="preloader__bar"><div class="preloader__bar-fill" id="preloaderBar"></div></div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       PROGRESS RAIL (lateral fixa)
+  ============================================================ -->
+  <aside class="rail" aria-hidden="true">
+    <div class="rail__line"><div class="rail__line-fill" id="railFill"></div></div>
+    <ul class="rail__list" id="railList">
+      <li data-target="cap-00"><span>00</span><em>Abertura</em></li>
+      <li data-target="cap-01"><span>01</span><em>Manifesto</em></li>
+      <li data-target="cap-02"><span>02</span><em>Dados OMS</em></li>
+      <li data-target="cap-03"><span>03</span><em>Doenças</em></li>
+      <li data-target="cap-04"><span>04</span><em>Protocolos</em></li>
+      <li data-target="cap-05"><span>05</span><em>Vídeo-aulas</em></li>
+      <li data-target="cap-06"><span>06</span><em>Rotina</em></li>
+      <li data-target="cap-07"><span>07</span><em>Mapa</em></li>
+    </ul>
+  </aside>
+
+  <main class="stage">
+
+    <!-- ========================================================
+         00 · ABERTURA / HERO
+    ======================================================== -->
+    <section class="screen screen--hero" id="cap-00" data-chapter="00">
+      <div class="hero__bg">
+        <div class="hero__grain"></div>
+        <div class="hero__orb hero__orb--a"></div>
+        <div class="hero__orb hero__orb--b"></div>
+        <div class="hero__orb hero__orb--c"></div>
+      </div>
+
+      <header class="hero__head">
+        <span class="tag">ODS 3 · Organização das Nações Unidas</span>
+        <span class="tag tag--ghost">Edição 2026 · Saúde &amp; Bem-Estar</span>
+      </header>
+
+      <div class="hero__type">
+        <h1 class="display" aria-label="Corpo em movimento, mente em paz.">
+          <span class="line"><span class="word">Corpo</span> <span class="word"><em>em</em></span></span>
+          <span class="line"><span class="word">movimento,</span></span>
+          <span class="line"><span class="word">mente</span> <span class="word"><em>em</em></span> <span class="word">paz.</span></span>
+        </h1>
+        <p class="hero__lede">
+          Uma enciclopédia viva de <strong>26 doenças</strong> e os exercícios físicos
+          que a ciência usa para <em>amenizar, controlar ou reverter</em> cada uma delas.
+          Sem milagre. Sem suplemento. Apenas <strong>movimento prescrito</strong>.
+        </p>
+      </div>
+
+      <footer class="hero__foot">
+        <button class="cta" data-scroll="cap-01">
+          <span>Entrar no portal</span>
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 4v16M6 14l6 6 6-6"/></svg>
+        </button>
+        <div class="hero__signature">
+          <span class="mono">— Editorial científico</span>
+          <span class="mono">Baseado em OMS · ACSM · WHO Guidelines 2024</span>
+        </div>
+      </footer>
+    </section>
+
+    <!-- ========================================================
+         01 · MANIFESTO
+    ======================================================== -->
+    <section class="screen screen--manifesto" id="cap-01" data-chapter="01">
+      <div class="chapter-mark"><span>Capítulo 01</span><i></i><span>Manifesto</span></div>
+      <div class="manifesto">
+        <p class="kinetic">
+          <span>O</span> <span>corpo</span> <span>humano</span> <span>foi</span> <span>desenhado</span>
+          <span>para</span> <span>caminhar</span> <span>20</span> <span>quilômetros</span> <span>por</span> <span>dia.</span>
+          <span>Hoje</span> <span>caminha</span> <span>800</span> <span>metros.</span>
+          <span>A</span> <span>conta</span> <span>chega</span> <span>em</span> <span>forma</span>
+          <span>de</span> <span class="hl">diabetes,</span> <span class="hl">hipertensão,</span>
+          <span class="hl">ansiedade,</span> <span class="hl">artrose,</span> <span class="hl">infarto.</span>
+          <span>O</span> <span>antídoto</span> <span>é</span> <span>antigo,</span>
+          <span>gratuito</span> <span>e</span> <span>quase</span> <span>esquecido:</span>
+          <span class="hl hl--gold">mover-se.</span>
+        </p>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         02 · DADOS OMS
+    ======================================================== -->
+    <section class="screen screen--stats" id="cap-02" data-chapter="02">
+      <div class="chapter-mark"><span>Capítulo 02</span><i></i><span>Dados que doem</span></div>
+
+      <div class="stats">
+        <article class="stat">
+          <h3 class="stat__num" data-count="74">0</h3>
+          <p class="stat__unit">%</p>
+          <p class="stat__cap">das mortes no mundo são causadas por <strong>doenças não transmissíveis</strong> — e quase todas têm o sedentarismo como gatilho.</p>
+        </article>
+        <article class="stat">
+          <h3 class="stat__num" data-count="500">0</h3>
+          <p class="stat__unit">mi</p>
+          <p class="stat__cap">de pessoas vão desenvolver doenças crônicas <strong>até 2030</strong> por inatividade física, segundo a OMS.</p>
+        </article>
+        <article class="stat">
+          <h3 class="stat__num" data-count="150">0</h3>
+          <p class="stat__unit">min/sem</p>
+          <p class="stat__cap">de atividade moderada já reduzem o risco cardiovascular em até <strong>35%</strong>. Não é muito. É possível.</p>
+        </article>
+        <article class="stat">
+          <h3 class="stat__num" data-count="30">0</h3>
+          <p class="stat__unit">%</p>
+          <p class="stat__cap">de redução na mortalidade geral. Esse é o efeito de <strong>caminhar todos os dias</strong> ao longo da vida.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         03 · CATÁLOGO DE DOENÇAS (mosaico)
+    ======================================================== -->
+    <section class="screen screen--catalog" id="cap-03" data-chapter="03">
+      <div class="chapter-mark"><span>Capítulo 03</span><i></i><span>26 doenças, 26 antídotos</span></div>
+
+      <header class="catalog__head">
+        <h2 class="serif-xl">Um atlas do que o movimento <em>realmente</em> cura.</h2>
+        <p class="lede">
+          Cada cartão é uma condição clínica. Toque para abrir o protocolo:
+          o que é, o que a ciência mostrou e quais exercícios usar.
+        </p>
+      </header>
+
+      <div class="catalog" id="catalog">
+        <!-- Os cards são gerados dinamicamente em js/main.js -->
+      </div>
+    </section>
+
+    <!-- ========================================================
+         04 · PROTOCOLOS (scroll horizontal pinado)
+    ======================================================== -->
+    <section class="screen screen--protocol" id="cap-04" data-chapter="04">
+      <div class="chapter-mark"><span>Capítulo 04</span><i></i><span>Protocolos por sistema</span></div>
+
+      <div class="protocol-pin" id="protocolPin">
+        <div class="protocol-track" id="protocolTrack">
+
+          <!-- Sistema cardiovascular -->
+          <article class="proto">
+            <header><span class="proto__num">P-01</span><span class="proto__sys">Sistema cardiovascular</span></header>
+            <h3>Caminhada zona 2</h3>
+            <p>40–60 min, ritmo em que ainda se consegue conversar. <em>Reduz pressão arterial sistólica em até 11 mmHg.</em></p>
+            <ul><li>5×/semana</li><li>Frequência cardíaca: 60–70% da máx.</li><li>Sem impacto articular</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-02</span><span class="proto__sys">Metabólico</span></header>
+            <h3>Treino de força full-body</h3>
+            <p>Agachamento, remada, supino, terra leve. Aumenta sensibilidade à insulina em <em>48 horas</em>.</p>
+            <ul><li>3×/semana</li><li>3 séries · 8–12 reps</li><li>Indicado em pré-diabetes e DM2</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-03</span><span class="proto__sys">Saúde mental</span></header>
+            <h3>HIIT curto + alongamento</h3>
+            <p>20 min de intervalado eleva BDNF e serotonina. Eficácia comparável a ISRS em depressão leve a moderada.</p>
+            <ul><li>3×/semana</li><li>30s forte · 90s leve · 8 rounds</li><li>Encerrar com 5min de respiração</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-04</span><span class="proto__sys">Osteoarticular</span></header>
+            <h3>Pilates de solo + mobilidade</h3>
+            <p>Fortalece core, glúteos e estabilizadores. <em>Reduz dor lombar crônica em 58%</em> em 12 semanas.</p>
+            <ul><li>4×/semana</li><li>30–45 min</li><li>Indicado em hérnia, artrose e lombalgia</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-05</span><span class="proto__sys">Respiratório</span></header>
+            <h3>Respiração diafragmática + caminhada</h3>
+            <p>Melhora capacidade pulmonar em DPOC e asma. Diminui crises e uso de broncodilatador.</p>
+            <ul><li>Diário</li><li>10 min de respiração 4-7-8</li><li>+ 30 min de caminhada leve</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-06</span><span class="proto__sys">Neurológico</span></header>
+            <h3>Tai chi &amp; equilíbrio</h3>
+            <p>Reduz quedas em idosos em <em>43%</em>. Em Parkinson, melhora marcha e congelamento motor.</p>
+            <ul><li>3×/semana</li><li>45–60 min</li><li>Indicado em Parkinson, AVC e demência</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-07</span><span class="proto__sys">Oncológico</span></header>
+            <h3>Exercício moderado supervisionado</h3>
+            <p>Durante e após quimioterapia: reduz fadiga, recidiva e mortalidade em até <em>40%</em> (mama, cólon, próstata).</p>
+            <ul><li>3–5×/semana</li><li>150 min aeróbico + 2× força</li><li>Sempre com aval médico</li></ul>
+          </article>
+
+          <article class="proto">
+            <header><span class="proto__num">P-08</span><span class="proto__sys">Imunológico &amp; sono</span></header>
+            <h3>Yoga restaurativa noturna</h3>
+            <p>Diminui cortisol, melhora qualidade do sono profundo e reduz inflamação sistêmica.</p>
+            <ul><li>Diário · 20 min</li><li>Antes de dormir</li><li>Sem luz azul</li></ul>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+         05 · VÍDEO-AULAS
+    ======================================================== -->
+    <section class="screen screen--videos" id="cap-05" data-chapter="05">
+      <div class="chapter-mark"><span>Capítulo 05</span><i></i><span>Aulas práticas</span></div>
+
+      <header class="videos__head">
+        <h2 class="serif-xl">Veja o exercício. <em>Faça o exercício.</em></h2>
+        <p class="lede">Curadoria de aulas de <strong>1 a 3 minutos</strong> com profissionais de educação física e fisioterapia explicando técnica, função e a qual condição cada movimento serve.</p>
+      </header>
+
+      <div class="videos" id="videos">
+        <!-- Cards de vídeo gerados em js/main.js -->
+      </div>
+
+      <p class="videos__note">
+        <span class="mono">↳</span> Vídeos hospedados no YouTube. Sem player, conexão lenta? Cada card abre direto no app/site oficial.
+      </p>
+    </section>
+
+    <!-- ========================================================
+         06 · ROTINA SEMANAL
+    ======================================================== -->
+    <section class="screen screen--routine" id="cap-06" data-chapter="06">
+      <div class="chapter-mark"><span>Capítulo 06</span><i></i><span>Sua semana, prescrita</span></div>
+
+      <h2 class="serif-xl">Uma semana que cabe na sua vida — e muda a sua saúde.</h2>
+
+      <div class="week">
+        <div class="day"><span>SEG</span><strong>Caminhada zona 2</strong><em>45 min · ar livre</em></div>
+        <div class="day"><span>TER</span><strong>Força full-body</strong><em>40 min · academia ou casa</em></div>
+        <div class="day"><span>QUA</span><strong>Mobilidade + Pilates</strong><em>30 min · solo</em></div>
+        <div class="day"><span>QUI</span><strong>HIIT curto</strong><em>20 min · qualquer lugar</em></div>
+        <div class="day"><span>SEX</span><strong>Força + core</strong><em>40 min</em></div>
+        <div class="day"><span>SÁB</span><strong>Atividade que te dá prazer</strong><em>≥ 60 min · dança, trilha, bike</em></div>
+        <div class="day"><span>DOM</span><strong>Yoga restaurativa</strong><em>30 min · descanso ativo</em></div>
+      </div>
+
+      <p class="routine__note">
+        Total: <strong>4h25min</strong> por semana — exatamente o que a OMS recomenda como mínimo para reduzir
+        em <em>30%</em> o risco de morrer por qualquer causa.
+      </p>
+    </section>
+
+    <!-- ========================================================
+         07 · MAPA DO SITE
+    ======================================================== -->
+    <section class="screen screen--map" id="cap-07" data-chapter="07">
+      <div class="chapter-mark"><span>Capítulo 07</span><i></i><span>Mapa do portal</span></div>
+
+      <h2 class="serif-xl">Tudo que você encontrou aqui, em uma só vista.</h2>
+
+      <div class="map" id="siteMap">
+        <!-- gerado em js/main.js -->
+      </div>
+
+      <footer class="end">
+        <p class="end__quote">“O movimento é o remédio mais antigo, mais barato e mais ignorado da humanidade.”</p>
+        <p class="end__sign">— ODS 3 · 2026</p>
+        <button class="cta cta--ghost" data-scroll="cap-00">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 20V4M6 10l6-6 6 6"/></svg>
+          <span>Voltar ao início</span>
+        </button>
+      </footer>
+    </section>
+
+  </main>
+
+  <!-- ============================================================
+       MODAL — detalhe de doença
+  ============================================================ -->
+  <div class="modal" id="modal" aria-hidden="true">
+    <div class="modal__backdrop" data-close></div>
+    <article class="modal__panel" role="dialog" aria-modal="true">
+      <button class="modal__close" data-close aria-label="Fechar">
+        <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 6l12 12M6 18L18 6"/></svg>
+      </button>
+      <div class="modal__body" id="modalBody"></div>
+    </article>
+  </div>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
